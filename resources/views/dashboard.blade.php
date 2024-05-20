@@ -23,6 +23,7 @@
                             $totalBooked=$countFlight+$count;
                              $totalPrice = \App\Models\BookingFlight::sum('price') + \App\Models\BookingHotel::sum('price');
                         @endphp
+                        
                         <p class="text-darkGreen font-normal  text-sm cursor-pointer font-montserrat mt-2 text-center">Total
                             Bookings</p>
                         @if( $totalBooked>0)
@@ -138,197 +139,7 @@
                 <span class="text-themeColor font-bold text-lg font-montserrat">Recent Bookings</span>
                 <p class="text-normalText font-normal  text-sm cursor-pointer font-montserrat mt-2 text-center">View All </p>
             </div>
-{{--            <div class="w-full mt-4">--}}
-{{--                <div class="relative overflow-x-auto shadow-md rounded-sm">--}}
-{{--                    <table class="w-full text-sm text-left rtl:text-right text-gray-500">--}}
-{{--                        <thead class="text-xs text-gray-700 uppercase bg-lightTheme">--}}
-{{--                        <tr>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                Sr. No.--}}
-{{--                            </th>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                Booking Id--}}
-{{--                            </th>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                User Name--}}
-{{--                            </th>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                Agents Name--}}
-{{--                            </th>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                Price--}}
-{{--                            </th>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                Booking Date--}}
-{{--                            </th>--}}
-{{--                            <th scope="col" class="px-6 py-3 text-black font-bold text-xs font-montserrat">--}}
-{{--                                Status--}}
-{{--                            </th>--}}
-{{--                        </tr>--}}
-{{--                        </thead>--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="bg-white border-b hover:bg-lightBlue">--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                1.--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <a href="#" class="font-medium text-themeColor hover:underline">124578</a>--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                James Bond--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                John Doe--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                $ 500--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                12-12-2021--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <span class="bg-green-200 text-green-600 rounded-full text-xs font-montserrat px-2 py-1">Confirmed</span>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr class="bg-white border-b hover:bg-lightBlue">--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                2.--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <a href="#" class="font-medium text-themeColor hover:underline">--}}
-{{--                                    587412--}}
-{{--                                </a>--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Steve Smith--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Alex John--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                $ 400--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                11-12-2021--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                    <span class="bg-red-200 text-red-600 rounded-full text-xs font-montserrat px-2 py-1">--}}
-{{--                                        Cancelled--}}
-{{--                                    </span>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr class="bg-white border-b hover:bg-lightBlue">--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                3.--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <a href="#" class="font-medium text-themeColor hover:underline">--}}
-{{--                                    587412--}}
-{{--                                </a>--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Tom Cruise--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Zayn Malik--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                $ 200--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                10-12-2021--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                    <span class="bg-yellow-200 text-yellow-600 rounded-full text-xs font-montserrat px-2 py-1">--}}
-{{--                                        Pending--}}
-{{--                                    </span>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr class="bg-white border-b hover:bg-lightBlue">--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                1.--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <a href="#" class="font-medium text-themeColor hover:underline">124578</a>--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                James Bond--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                John Doe--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                $ 500--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                12-12-2021--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <span class="bg-green-200 text-green-600 rounded-full text-xs font-montserrat px-2 py-1">Confirmed</span>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr class="bg-white border-b hover:bg-lightBlue">--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                2.--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <a href="#" class="font-medium text-themeColor hover:underline">--}}
-{{--                                    587412--}}
-{{--                                </a>--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Steve Smith--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Alex John--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                $ 400--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                11-12-2021--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                    <span class="bg-red-200 text-red-600 rounded-full text-xs font-montserrat px-2 py-1">--}}
-{{--                                        Cancelled--}}
-{{--                                    </span>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr class="bg-white border-b hover:bg-lightBlue">--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                3.--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                <a href="#" class="font-medium text-themeColor hover:underline">--}}
-{{--                                    587412--}}
-{{--                                </a>--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Tom Cruise--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                Zayn Malik--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                $ 200--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                10-12-2021--}}
-{{--                            </td>--}}
-{{--                            <td class="px-6 py-4 text-normalText font-semibold  text-xs font-montserrat">--}}
-{{--                                    <span class="bg-yellow-200 text-yellow-600 rounded-full text-xs font-montserrat px-2 py-1">--}}
-{{--                                        Pending--}}
-{{--                                    </span>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
-{{--            <div class="flex justify-between">--}}
-{{--                <h1 class="text-2xl font-semibold p-4">Hotel Bookings</h1>--}}
-{{--            </div>--}}
 
 
             <x-splade-table :for="$recentBookingHotels">
@@ -405,9 +216,9 @@
             ->groupBy('month')
             ->get();
 
-        $bookingFlightRevenue = \App\Models\BookingFlight::selectRaw('SUM(price) as total_revenue, MONTH(created_at) as month')
-            ->groupBy('month')
-            ->get();
+        // $bookingFlightRevenue = \App\Models\BookingFlight::selectRaw('SUM(price) as total_revenue, MONTH(created_at) as month')
+        //     ->groupBy('month')
+        //     ->get();
 
         // Combine the data for both models
         $revenues = [];
@@ -416,9 +227,9 @@
             $revenues[$revenue->month]['hotel'] = $revenue->total_revenue;
         }
 
-        foreach ($bookingFlightRevenue as $revenue) {
-            $revenues[$revenue->month]['flight'] = $revenue->total_revenue;
-        }
+        // foreach ($bookingFlightRevenue as $revenue) {
+        //     $revenues[$revenue->month]['flight'] = $revenue->total_revenue;
+        // }
 
         // Fill in missing months with 0 revenue
         for ($i = 1; $i <= 12; $i++) {
@@ -437,7 +248,7 @@
 
         foreach ($revenues as $month => $revenue) {
             $hotelData[] = $revenue['hotel'];
-            $flightData[] = $revenue['flight'];
+            // $flightData[] = $revenue['flight'];
         }
 
         $chartData = [
