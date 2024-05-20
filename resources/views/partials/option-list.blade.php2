@@ -1,0 +1,69 @@
+@foreach ($optionsArrayPagination->items() as $roomTypeList)
+{{-- @php
+print_r($roomTypeList);
+
+@endphp --}}
+{{-- @dd($optionsArrayPagination->items()) --}}
+<div
+    class="w-full flex mt-3 border-2 border-gray-300 rounded-lg p-3 bg-white shdow-md shadow-gray-500">
+
+    <div class="w-1/5 flex h-max flex flex-col">
+        @if (isset($roomTypeList['Rooms']['Room'][0]))
+            <span class="text-gray-500 font-semibold text-sm">
+                {{ $roomTypeList['Rooms']['Room'][0]['RoomName'] }}
+            </span>
+            @php
+
+                if (isset($roomTypeList['Rooms']['Room'][0]['DailyPrices']) && is_array($roomTypeList['Rooms']['Room'][0]['DailyPrices']) && isset($roomTypeList['Rooms']['Room'][0]['DailyPrices']['DailyPrice']) && is_array($roomTypeList['Rooms']['Room'][0]['DailyPrices']['DailyPrice']) && isset($roomTypeList['Rooms']['Room'][0]['DailyPrices']['DailyPrice'][0])) {
+                    $dailyPrice1 = $roomTypeList['Rooms']['Room'][0]['DailyPrices']['DailyPrice'][0];
+                    // dd("if",$dailyPrice1);
+                } else {
+                    // Provide a default value for $dailyPrice in the else block
+                    $dailyPrice[] = 0; // You can change this to whatever default value you want
+                }
+
+            @endphp
+        @else
+            <span class="text-gray-500 font-semibold text-sm">
+                {{ $roomTypeList['Rooms']['Room']['RoomName'] }}
+            </span>
+            @php
+                if (isset($roomTypeList['Rooms']['Room']['DailyPrices']) && isset($roomTypeList['Rooms']['Room']['DailyPrices']['DailyPrice'])) {
+                    $dailyPrice = $roomTypeList['Rooms']['Room']['DailyPrices']['DailyPrice'];
+                } else {
+                    $dailyPrice[] = 0;
+                }
+
+                // $dailyPrice = $roomTypeList['Rooms']['Room']['DailyPrices']['DailyPrice'];
+                // dd("else",$dailyPrice);
+
+            @endphp
+        @endif
+    </div>
+
+
+    <div class="w-1/5 flex h-max">
+        <span class="text-gray-500 font-semibold text-sm">{{ $roomTypeList['BoardType'] }}</span>
+    </div>
+
+
+
+    @php
+        // use Carbon\Carbon;
+        $checkIn = Carbon\Carbon::parse($searchParams['checkInDate']);
+        $checkOut = Carbon\Carbon::parse($searchParams['checkOutDate']);
+
+        $durationInDays = $checkOut->diffInDays($checkIn);
+    @endphp
+
+    <div class="w-1/5 flex h-max flex flex-col">
+        <span class="text-gray-500 font-semibold text-sm">£ {{ $roomTypeList['TotalPrice'] }}
+        </span>
+        <span class="text-sky-600 font-semibold text-xs">Refundable till Jul 23 2023</span>
+    </div>
+    <div class="w-1/5 flex justify-center h-max">
+        {{-- <a href="{{ route('hotel.bookingStage1', ['bookingDetails' => ['selectedHotelDetails' => $hotelDetailsData, 'selectedHotelID' => $selectedHotelID['HotelId'], 'selectedRoom' => $roomTypeList, 'selectedOption' => $roomTypeList]]) }}"
+            class="text-sky-600 border-b-2 border-b-sky-400 font-semibold">Book</a> --}}
+    </div>
+</div
+@endforeach
